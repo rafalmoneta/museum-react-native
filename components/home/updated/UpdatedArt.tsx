@@ -20,7 +20,7 @@ export default function UpdatedArtwork() {
       <View style={styles.header}>
         <Text style={styles.headerTitle}>Updated Art</Text>
         
-        <TouchableOpacity onPress={() => router.push(`/artwork/all`)}>
+        <TouchableOpacity onPress={() => router.push(`/artworks`)}>
           <Text style={styles.headerBtn}>View All</Text>
         </TouchableOpacity>
       </View>
@@ -41,7 +41,7 @@ export default function UpdatedArtwork() {
                 }}
               />
             )}
-            keyExtractor={(item) => item?.job_id}
+            keyExtractor={(item) => item?.id}
             contentContainerStyle={{ columnGap: SIZES.small }}
             horizontal
           />
