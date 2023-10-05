@@ -7,12 +7,17 @@ interface ArtworkCardProps {
   handleNavigate: () => void;
 }
 
-export default function ArtworkCard({ item, handleNavigate }: ArtworkCardProps) {
+export default function ArtworkCard({
+  item,
+  handleNavigate,
+}: ArtworkCardProps) {
+  const uri = `https://www.artic.edu/iiif/2/${item?.image_id}/full/600,/0/default.jpg`;
+
   return (
     <TouchableOpacity style={styles.container} onPress={handleNavigate}>
       <View style={styles.artworkImageContainer}>
         <Image
-          source={{ uri: item.thumbnail.lqip }}
+          source={{ uri }}
           resizeMode="cover"
           style={styles.artworkImage}
         />
